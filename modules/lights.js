@@ -1,3 +1,5 @@
+import * as THREE from '../node_modules/three/build/three.module.js';
+
 export function createLights(scene){
     // Create a directional light
     const sunLight = new THREE.PointLight(0xffffff, 2, 100);
