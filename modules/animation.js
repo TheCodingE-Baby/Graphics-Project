@@ -11,6 +11,7 @@ export function startAnimation(scene, camera, renderer, planets) {
 
         // renderer.render(scene, camera);
     }
+    renderer.render(scene, camera);
     
     animate();
 }
