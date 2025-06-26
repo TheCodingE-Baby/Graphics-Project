@@ -3,5 +3,9 @@ body{
     overflow: hidden;
     font-family: Arial, sans-serif;
     color: #fff;
-    background-color: #000;
+    background-color: #03011df6;
+}
+h1{
+    z-index: 1;
+    position: relative;
 }

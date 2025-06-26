@@ -9,9 +9,7 @@ export function startAnimation(scene, camera, renderer, planets) {
             planet.position.z = Math.sin(planet.orbitSpeed * Date.now() * 0.001) * planet.orbitRadius;
         });
 
-        // renderer.render(scene, camera);
-    }
-    renderer.render(scene, camera);
-    
+        renderer.render(scene, camera);
+    }    
     animate();
 }

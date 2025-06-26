@@ -11,9 +11,12 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
+//Debugging: log the renderer
+console.log("renderer:", renderer);
+
 //Add lights to the scene
 createLights(scene);
 const planets = createPlanets(scene);
 
 // Start the animation loop
-startAnimation(renderer, scene, camera, planets);
+startAnimation( scene, camera, renderer, planets);
