@@ -13,6 +13,15 @@
         <canvas>    
             <script src="https://cdn.jsdelivr.net/npm/three@0.137.5/build/three.min.js"></script>
             <script type="module" src="./modules/main.js"></script>
+            <script type="importmap">
+                {
+                    imports: {
+                        "three": "https://cdn.jsdelivr.net/npm/three@0.137.5/build/three.module.js",
+                        "OrbitControls": "https://cdn.jsdelivr.net/npm/three@0.137.5/examples/jsm/controls/OrbitControls.js",
+                        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.137.5/examples/jsm/"   
+                    }
+                }
+            </script>
         </canvas>
      </div>
 </body>
