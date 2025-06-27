@@ -78,17 +78,27 @@ export function createPlanets(scene){
     planets.push(jupiter);
 
     // Create Saturn
+    //Satrun's land
     const saturnGeometry = new THREE.SphereGeometry(1.2, 32, 32);
     const saturnMaterial = new THREE.MeshStandardMaterial({
         color: 0xffd700,
         map: new THREE.TextureLoader().load('./assets/Textures/2k_saturn.jpg'), // Load a texture for Saturn
     });
-    const saturn = new THREE.Mesh(saturnGeometry, saturnMaterial);
+    // Saturn's rings
+    const ringGeometry = new THREE.RingGeometry(1.5, 2.5, 64);
+    const ringMaterial = new THREE.MeshBasicMaterial({
+        color: 0xffffff,
+        side: THREE.DoubleSide,
+        map: new THREE.TextureLoader().load('./assets/Textures/8k_saturn_ring_alpha.png'), // Load a texture for Saturn's rings
+    });
+    const saturn = new THREE.Mesh(saturnGeometry, saturnMaterial );
+    const saturnRing = new THREE.Mesh(ringGeometry, ringMaterial);
+    saturnRing.rotation.x = Math.PI / 2; // Rotate the ring to be 
     saturn.position.set(25, 0, 0); // Position Saturn at a distance of 25 units from the Sun
     saturn.orbitSpeed = 0.0008;
     saturn.orbitRadius = 25; // Set the orbit radius for Saturn
-    scene.add(saturn);
-    planets.push(saturn);
+    scene.add(saturn,saturnRing); // Add both Saturn and its rings to the scene 
+    planets.push(saturn, saturnRing); // Add Saturn and its rings to the planets array
 
     // Create Uranus
     const uranusGeometry = new THREE.SphereGeometry(1, 32, 32);
@@ -115,18 +125,6 @@ export function createPlanets(scene){
     neptune.orbitRadius = 35; // Set the orbit radius for Neptune
     scene.add(neptune);
     planets.push(neptune);
-    // And finally, the dwarf planet Pluto
-    const plutoGeometry = new THREE.SphereGeometry(0.2, 32, 32);
-    const plutoMaterial = new THREE.MeshStandardMaterial({
-        color: 0x888888,
-        map: new THREE.TextureLoader().load(''), // Load a texture for Pluto
-    });
-    const pluto = new THREE.Mesh(plutoGeometry, plutoMaterial);
-    pluto.position.set(40, 0, 0); // Position Pluto at a distance of 40 units from the Sun
-    pluto.orbitSpeed = 0.0003;
-    pluto.orbitRadius = 40; // Set the orbit radius for Pluto
-    scene.add(pluto);
-    planets.push(pluto);
 
     return planets; // Return the array of planets for later animation or interaction
 }
