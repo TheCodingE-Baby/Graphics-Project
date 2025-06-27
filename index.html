@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.137.5/build/three.module.js",
+                "OrbitControls": "https://cdn.jsdelivr.net/npm/three@0.137.5/examples/jsm/controls/OrbitControls.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.137.5/examples/jsm/"   
+            }
+        }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solar System Viewer</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body background="./assets/2k_stars_milky_way.jpg">
     <div id="scene-container">
-        <img src="./assets/2k_stars_milky_way.jpg" alt="background-img">
         <h1>Solar System Viewer</h1>
         <canvas>    
             <script src="https://cdn.jsdelivr.net/npm/three@0.137.5/build/three.min.js"></script>
             <script type="module" src="./modules/main.js"></script>
-            <script type="importmap">
-                {
-                    imports: {
-                        "three": "https://cdn.jsdelivr.net/npm/three@0.137.5/build/three.module.js",
-                        "OrbitControls": "https://cdn.jsdelivr.net/npm/three@0.137.5/examples/jsm/controls/OrbitControls.js",
-                        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.137.5/examples/jsm/"   
-                    }
-                }
-            </script>
         </canvas>
      </div>
 </body>
