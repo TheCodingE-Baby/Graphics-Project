@@ -1,5 +1,4 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.137.5/build/three.module.js';
-import { OrbitControls } from '../node_modules/three/examples/jsm/controls/OrbitControls.js';
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.137.5/examples/jsm/controls/OrbitControls.js';
 import { createScene } from './scene.js';
 import { createCamera } from './camera.js';
 import { createLights } from './lights.js';
